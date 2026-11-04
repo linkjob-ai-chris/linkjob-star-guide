@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: linkjob-star-guide
+    runtime: static
+    buildCommand: echo "Static site ready"
+    staticPublishPath: ./public
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
